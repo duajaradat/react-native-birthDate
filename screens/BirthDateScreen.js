@@ -4,15 +4,13 @@ import {
   View,
   Text,
   Button,
+  SafeAreaView,
   StyleSheet,
   TouchableOpacity,
   TextInput,
-  Modal,
-  SafeAreaView,
 } from 'react-native';
 
-function BirthdayScreen() {
-  const [modalVisible, setModalVisible] = useState(false);
+function BirthdayScreen({navigation}) {
   const [renderOnFocus, setRenderOnFocus] = useState(false);
 
   const [monthPlaceHolder, setMonthPlaceholder] = useState('MM');
@@ -29,132 +27,121 @@ function BirthdayScreen() {
 
   moment.updateLocale(moment.locale(), {invalidDate: ''});
   const monthName = moment(month, 'M').format('MMMM');
+  const dayName = moment(day, 'D').format('DDDD');
+
   const dayHandler = day => {
-    dayValid = moment().date(day);
-    console.log(dayValid);
+    console.log(dayName);
   };
 
+  const goBack = event => {
+    if (!day && event.nativeEvent.key === 'Backspace' && dayRef.current) {
+      monthRef.current.focus();
+    } else if (
+      !year &&
+      event.nativeEvent.key === 'Backspace' &&
+      yearRef.current
+    ) {
+      dayRef.current.focus();
+    }
+  };
   return (
-    <View style={styles.container}>
-      <Text style={styles.titleName}>What's your birthdate?</Text>
+    <SafeAreaView style={styles.safeScreen}>
+      <View style={styles.container}>
+        <Text style={styles.titleName}>What's your birthdate?</Text>
 
-      <TouchableOpacity onPress={() => setModalVisible(true)}>
-        <Text style={styles.qtext}>Why do we ask this?</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Modal')}>
+          <Text style={styles.qtext}>Why do we ask this?</Text>
+        </TouchableOpacity>
 
-      <Modal
-        style={styles.modal}
-        visible={modalVisible}
-        animationType="fade"
-        presentationStyle="pageSheet">
-        <SafeAreaView>
-          <View style={{backgroundColor: '#050e38'}}>
-            <TouchableOpacity onPress={() => setModalVisible(false)}>
-              <Text>X</Text>
-            </TouchableOpacity>
-            <View>
-              <Text>What's your birthdate</Text>
-              <Text>Why do we ask this?</Text>
-              <Text>
-                We ask you this question in order to verify your identity for
-                your online brokerage account application.
-              </Text>
-            </View>
+        <View style={styles.dateContainer}>
+          <View style={styles.textInputView}>
+            <TextInput
+              maxLength={2}
+              value={month}
+              ref={monthRef}
+              textAlign="center"
+              style={styles.input}
+              keyboardType="number-pad"
+              returnKeyType="next"
+              placeholder={monthPlaceHolder}
+              placeholderTextColor="#e4e5ed"
+              onChangeText={month => {
+                setMonth(month);
+                if (month.length === 2 && month >= '01' && month <= '12') {
+                  dayRef.current.focus();
+                }
+              }}
+              onFocus={() => {
+                setRenderOnFocus(true);
+                setMonthPlaceholder('');
+              }}
+              onBlur={() => setRenderOnFocus(false)}
+            />
+            {renderOnFocus && month === '' && (
+              <Text style={styles.greenText}>Month</Text>
+            )}
+
+            <Text style={styles.greenText}>{month && monthName}</Text>
           </View>
-        </SafeAreaView>
-      </Modal>
 
-      <View style={styles.dateContainer}>
-        <View style={styles.textInputView}>
-          <TextInput
-            maxLength={2}
-            value={month}
-            ref={monthRef}
-            textAlign="center"
-            style={styles.input}
-            keyboardType="number-pad"
-            returnKeyType="next"
-            placeholder={monthPlaceHolder}
-            placeholderTextColor="#e4e5ed"
-            onChangeText={month => {
-              setMonth(month);
-              //   if (month.length === 2 && month >= '01' && month <= '12') {
-              //     dayRef.current.focus();
-              //   }
-            }}
-            onFocus={() => {
-              setRenderOnFocus(true);
-              setMonthPlaceholder('');
-            }}
-            onBlur={() => setRenderOnFocus(false)}
-          />
-          {renderOnFocus && month === '' && (
-            <Text style={styles.greenText}>Month</Text>
-          )}
+          <View style={styles.textInputView}>
+            <TextInput
+              maxLength={2}
+              value={day}
+              ref={dayRef}
+              textAlign="center"
+              style={styles.input}
+              keyboardType="number-pad"
+              placeholder={dayPlaceholder}
+              placeholderTextColor="#e4e5ed"
+              onChangeText={day => {
+                setDay(day);
+                if (day.length === 2 && day >= '01' && day <= '31') {
+                  yearRef.current.focus();
+                }
+              }}
+              onFocus={() => {
+                setRenderOnFocus(true);
+                setDayPlaceholder('');
+              }}
+              onBlur={() => setRenderOnFocus(false)}
+              onKeyPress={event => goBack(event)}
+            />
+          </View>
 
-          <Text style={styles.greenText}>{month && monthName}</Text>
-        </View>
-
-        <View style={styles.textInputView}>
-          <TextInput
-            maxLength={2}
-            value={day}
-            ref={dayRef}
-            textAlign="center"
-            style={styles.input}
-            keyboardType="number-pad"
-            placeholder={dayPlaceholder}
-            placeholderTextColor="#e4e5ed"
-            onChangeText={day => {
-              setDay(day);
-              if (day.length === 2 && day >= '01' && day <= '31') {
-                yearRef.current.focus();
-              }
-            }}
-            onFocus={() => {
-              setRenderOnFocus(true);
-              setDayPlaceholder('');
-            }}
-            onBlur={() => setRenderOnFocus(false)}
-          />
-          {/* {renderOnFocus && day === '' && (
-            <Text style={styles.greenText}>Day</Text>
-          )} */}
-        </View>
-
-        <View style={styles.textInputView}>
-          <TextInput
-            ref={yearRef}
-            style={styles.input}
-            placeholder={yearPlaceHolder}
-            keyboardType="number-pad"
-            maxLength={4}
-            placeholderTextColor="#e4e5ed"
-            textAlign="center"
-            onChangeText={year => {
-              setYear(year);
-            }}
-            value={year}
-            onFocus={() => {
-              //   setRenderOnFocus(true);
-              setYearPlaceholder('');
-            }}
-          />
+          <View style={styles.textInputView}>
+            <TextInput
+              ref={yearRef}
+              style={styles.input}
+              placeholder={yearPlaceHolder}
+              keyboardType="number-pad"
+              maxLength={4}
+              placeholderTextColor="#e4e5ed"
+              textAlign="center"
+              onKeyPress={event => goBack(event)}
+              onChangeText={year => {
+                setYear(year);
+              }}
+              value={year}
+              onFocus={() => {
+                setYearPlaceholder('');
+              }}
+            />
+          </View>
         </View>
       </View>
-      {/* <Button title="Continue" style={styles.btn} /> */}
-    </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingVertical: 25,
     paddingHorizontal: 25,
+    backgroundColor: '#050e38',
   },
   safeScreen: {
+    flex: 1,
     backgroundColor: '#050e38',
-    flexDirection: 'row',
   },
   modal: {
     flex: 1,
@@ -163,16 +150,17 @@ const styles = StyleSheet.create({
   },
   titleName: {
     color: 'white',
-    fontSize: 21,
+    fontSize: 22,
+    fontWeight: '700',
     marginBottom: 20,
     letterSpacing: 1,
-    fontFamily: 'Fredoka',
+    fontFamily: 'Rubik-VariableFont_wght',
   },
 
   qtext: {
     color: '#00FAAF',
-    fontSize: 14,
-    fontWeight: '500',
+    fontSize: 16,
+    fontWeight: '600',
     letterSpacing: 1,
   },
   dateContainer: {

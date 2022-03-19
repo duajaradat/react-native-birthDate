@@ -1,18 +1,11 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-
-import BirthDateScreen from './screens/BirthDateScreen';
+import StackNavigator from './navigation/StackNavigator';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <BirthDateScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#050e38',
-    flex: 1,
-  },
-});
