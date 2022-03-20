@@ -22,6 +22,8 @@ function BirthdayScreen({navigation}) {
   const [day, setDay] = useState('');
   const [year, setYear] = useState('');
 
+  const [error, setError] = useState(false);
+
   const monthRef = useRef();
   const dayRef = useRef();
   const yearRef = useRef();
@@ -29,10 +31,6 @@ function BirthdayScreen({navigation}) {
   moment.updateLocale(moment.locale(), {invalidDate: ''});
   const monthName = moment(month, 'M').format('MMMM');
   const dayName = moment(day, 'D').format('DDDD');
-
-  const dayHandler = day => {
-    console.log(dayName);
-  };
 
   const goBack = event => {
     if (!day && event.nativeEvent.key === 'Backspace' && dayRef.current) {
@@ -166,19 +164,24 @@ function BirthdayScreen({navigation}) {
             )}
           </View>
         </View>
-        <Text></Text>
       </View>
+      <TouchableOpacity>
+        <View style={styles.btnContainer}>
+          <Text style={styles.btn}>Continue</Text>
+        </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 25,
-    paddingHorizontal: 25,
     backgroundColor: '#050e38',
   },
   safeScreen: {
     flex: 1,
+    paddingVertical: 25,
+    paddingHorizontal: 25,
+    justifyContent: 'space-between',
     backgroundColor: '#050e38',
   },
   modal: {
@@ -230,9 +233,16 @@ const styles = StyleSheet.create({
     color: 'tomato',
   },
   btn: {
+    fontSize: 17,
+    color: '#050e38',
+  },
+  btnContainer: {
     backgroundColor: '#00FAAF',
-    color: 'navyblue',
-    borderRadius: 8,
+    borderRadius: 10,
+    width: '100%',
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
