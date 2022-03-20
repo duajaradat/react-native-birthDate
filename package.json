@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@manu_omg/react-native-emoji-selector": "^1.0.3",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "moment": "^2.29.1",
@@ -17,6 +18,7 @@
     "react-native": "0.67.4",
     "react-native-datefield": "^0.3.5",
     "react-native-emoji": "^1.8.0",
+    "react-native-emoji-modal": "^0.2.2",
     "react-native-safe-area-context": "^4.2.1",
     "react-native-screens": "^3.13.1",
     "react-native-vector-icons": "^9.1.0"

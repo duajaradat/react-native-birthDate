@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import Emoji from 'react-native-emoji';
 
 function BirthdayScreen({navigation}) {
   const [renderOnFocus, setRenderOnFocus] = useState(false);
@@ -179,16 +178,20 @@ function BirthdayScreen({navigation}) {
             )}
           </View>
         </View>
+        <View style={{marginTop: 50}}>
+          {error ? (
+            <Text style={styles.error}>
+              We are sorry but you must be 18 years or older to proceed.
+            </Text>
+          ) : (
+            <View style={{flexDirection: 'row'}}>
+              <Text style={styles.birthDateText}>
+                {moment([year, month, day]).format('MMMM Do YYYY')}
+              </Text>
+            </View>
+          )}
+        </View>
       </View>
-      {error ? (
-        <Text style={styles.error}>
-          We are sorry but you must be 18 years or older to proceed.
-        </Text>
-      ) : (
-        <Text style={styles.birthDateText}>
-          {moment([year, month, day]).format('MMMM Do YYYY')}
-        </Text>
-      )}
       <TouchableOpacity disabled={disabled}>
         <View style={disabled ? styles.disabled : styles.btnContainer}>
           <Text style={styles.btn}>Continue</Text>
@@ -200,6 +203,7 @@ function BirthdayScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#050e38',
+    flex: 1,
   },
   safeScreen: {
     flex: 1,
@@ -262,8 +266,8 @@ const styles = StyleSheet.create({
   },
   birthDateText: {
     color: '#00FAAF',
-    fontSize: 14,
-    letterSpacing: 1,
+    fontSize: 17,
+    fontWeight: '600',
     fontFamily: 'Rubik-VariableFont_wght',
   },
   btn: {
