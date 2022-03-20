@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
+import Emoji from 'react-native-emoji';
 
 function BirthdayScreen({navigation}) {
   const [renderOnFocus, setRenderOnFocus] = useState(false);
@@ -43,6 +44,27 @@ function BirthdayScreen({navigation}) {
     ) {
       dayRef.current.focus();
     }
+  };
+
+  const MAX_VALID_YR = 2022;
+  const MIN_VALID_YR = 1900;
+
+  const isLeap = year => {
+    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+  };
+  const isValidDate = (d, m, y) => {
+    if (y > MAX_VALID_YR || y < MIN_VALID_YR) return false;
+    if (m < 1 || m > 12) return false;
+    if (d < 1 || d > 31) return false;
+
+    if (m == 2) {
+      if (isLeap(y)) return d <= 29;
+      else return d <= 28;
+    }
+
+    if (m == 4 || m == 6 || m == 9 || m == 11) return d <= 30;
+
+    return true;
   };
   return (
     <SafeAreaView style={styles.safeScreen}>
@@ -97,7 +119,9 @@ function BirthdayScreen({navigation}) {
               onChangeText={day => {
                 setDay(day);
                 if (day.length === 2 && day >= '01' && day <= '31') {
-                  yearRef.current.focus();
+                  if (isValidDate(day, month, 2022)) {
+                    yearRef.current.focus();
+                  }
                 }
               }}
               onFocus={() => {
@@ -107,6 +131,9 @@ function BirthdayScreen({navigation}) {
               onBlur={() => setRenderOnFocus(false)}
               onKeyPress={event => goBack(event)}
             />
+            {renderOnFocus && dayPlaceholder === '' && (
+              <Text style={styles.greenText}>Day</Text>
+            )}
           </View>
 
           <View style={styles.textInputView}>
@@ -121,14 +148,25 @@ function BirthdayScreen({navigation}) {
               onKeyPress={event => goBack(event)}
               onChangeText={year => {
                 setYear(year);
+                if (year.length === 4 && year >= '1900' && year <= '2022') {
+                  if (isValidDate(day, month, year)) {
+                  } else {
+                  }
+                }
               }}
               value={year}
               onFocus={() => {
                 setYearPlaceholder('');
+                setRenderOnFocus(true);
               }}
+              onBlur={() => setRenderOnFocus(false)}
             />
+            {renderOnFocus && yearPlaceHolder === '' && (
+              <Text style={styles.greenText}>Year</Text>
+            )}
           </View>
         </View>
+        <Text></Text>
       </View>
     </SafeAreaView>
   );
