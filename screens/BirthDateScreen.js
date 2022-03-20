@@ -3,7 +3,6 @@ import moment from 'moment';
 import {
   View,
   Text,
-  Button,
   SafeAreaView,
   StyleSheet,
   TouchableOpacity,
@@ -18,6 +17,8 @@ function BirthdayScreen({navigation}) {
   const [dayPlaceholder, setDayPlaceholder] = useState('DD');
   const [yearPlaceHolder, setYearPlaceholder] = useState('YYYY');
 
+  const [disabled, setDisabled] = useState(true);
+
   const [month, setMonth] = useState('');
   const [day, setDay] = useState('');
   const [year, setYear] = useState('');
@@ -30,7 +31,6 @@ function BirthdayScreen({navigation}) {
 
   moment.updateLocale(moment.locale(), {invalidDate: ''});
   const monthName = moment(month, 'M').format('MMMM');
-  const dayName = moment(day, 'D').format('DDDD');
 
   const goBack = event => {
     if (!day && event.nativeEvent.key === 'Backspace' && dayRef.current) {
@@ -63,6 +63,17 @@ function BirthdayScreen({navigation}) {
     if (m == 4 || m == 6 || m == 9 || m == 11) return d <= 30;
 
     return true;
+  };
+  const ageHandle = year => {
+    let today = new Date();
+    let birthDate = new Date(year);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    console.log(age);
+    if (age >= 18) {
+      return true;
+    } else {
+      return false;
+    }
   };
   return (
     <SafeAreaView style={styles.safeScreen}>
@@ -148,7 +159,11 @@ function BirthdayScreen({navigation}) {
                 setYear(year);
                 if (year.length === 4 && year >= '1900' && year <= '2022') {
                   if (isValidDate(day, month, year)) {
-                  } else {
+                    if (ageHandle(year)) {
+                      setDisabled(false);
+                    } else {
+                      setError(true);
+                    }
                   }
                 }
               }}
@@ -165,8 +180,17 @@ function BirthdayScreen({navigation}) {
           </View>
         </View>
       </View>
-      <TouchableOpacity>
-        <View style={styles.btnContainer}>
+      {error ? (
+        <Text style={styles.error}>
+          We are sorry but you must be 18 years or older to proceed.
+        </Text>
+      ) : (
+        <Text style={styles.birthDateText}>
+          {moment([year, month, day]).format('MMMM Do YYYY')}
+        </Text>
+      )}
+      <TouchableOpacity disabled={disabled}>
+        <View style={disabled ? styles.disabled : styles.btnContainer}>
           <Text style={styles.btn}>Continue</Text>
         </View>
       </TouchableOpacity>
@@ -231,6 +255,16 @@ const styles = StyleSheet.create({
   },
   error: {
     color: 'tomato',
+    fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 1,
+    fontFamily: 'Rubik-VariableFont_wght',
+  },
+  birthDateText: {
+    color: '#00FAAF',
+    fontSize: 14,
+    letterSpacing: 1,
+    fontFamily: 'Rubik-VariableFont_wght',
   },
   btn: {
     fontSize: 17,
@@ -238,6 +272,14 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
     backgroundColor: '#00FAAF',
+    borderRadius: 10,
+    width: '100%',
+    height: 65,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  disabled: {
+    backgroundColor: 'grey',
     borderRadius: 10,
     width: '100%',
     height: 60,

@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* birthdayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* birthdayTests.m */; };
+		08D8E3774E3C699991014DB8 /* libPods-birthday.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5448FD2C2356A6CB85030B82 /* libPods-birthday.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D2700D0F45CE4EE38F20AE42 /* Rubik-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F70101A5300A4F65B6C897AB /* Rubik-Italic-VariableFont_wght.ttf */; };
-		CDB8C6A893DB422893092210 /* Rubik-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B13B908993E24F2A98F1FAC2 /* Rubik-VariableFont_wght.ttf */; };
+		6B5A3A290763982322728F2F /* libPods-birthday-birthdayTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2E522D5177962FE754D5C1 /* libPods-birthday-birthdayTests.a */; };
 		6D8D41FFBA434D22A7A92F91 /* Fredoka-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D14769B28F401BB2B7A4CD /* Fredoka-VariableFont_wdth,wght.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CDB8C6A893DB422893092210 /* Rubik-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B13B908993E24F2A98F1FAC2 /* Rubik-VariableFont_wght.ttf */; };
+		D2700D0F45CE4EE38F20AE42 /* Rubik-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F70101A5300A4F65B6C897AB /* Rubik-Italic-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,17 +33,23 @@
 		00E356EE1AD99517003FC87E /* birthdayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = birthdayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* birthdayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = birthdayTests.m; sourceTree = "<group>"; };
+		11D0A9ECDCECD7500434DE82 /* Pods-birthday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-birthday.debug.xcconfig"; path = "Target Support Files/Pods-birthday/Pods-birthday.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* birthday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = birthday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = birthday/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = birthday/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = birthday/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = birthday/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = birthday/main.m; sourceTree = "<group>"; };
+		5448FD2C2356A6CB85030B82 /* libPods-birthday.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-birthday.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = birthday/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85D14769B28F401BB2B7A4CD /* Fredoka-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Fredoka-VariableFont_wdth,wght.ttf"; path = "../assets/fonts/Fredoka-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
+		98BA5052898EC3CF6ECCA3A9 /* Pods-birthday-birthdayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-birthday-birthdayTests.debug.xcconfig"; path = "Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B13B908993E24F2A98F1FAC2 /* Rubik-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-VariableFont_wght.ttf"; path = "../assets/fonts/Rubik-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		D96F78A6EE31BDA3E4DDF1CC /* Pods-birthday-birthdayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-birthday-birthdayTests.release.xcconfig"; path = "Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE6A4ED40608B5D9FE051288 /* Pods-birthday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-birthday.release.xcconfig"; path = "Target Support Files/Pods-birthday/Pods-birthday.release.xcconfig"; sourceTree = "<group>"; };
+		EB2E522D5177962FE754D5C1 /* libPods-birthday-birthdayTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-birthday-birthdayTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F70101A5300A4F65B6C897AB /* Rubik-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Rubik-Italic-VariableFont_wght.ttf"; path = "../assets/fonts/Rubik-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B13B908993E24F2A98F1FAC2 /* Rubik-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Rubik-VariableFont_wght.ttf"; path = "../assets/fonts/Rubik-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		85D14769B28F401BB2B7A4CD /* Fredoka-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; name = "Fredoka-VariableFont_wdth,wght.ttf"; path = "../assets/fonts/Fredoka-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F70101A5300A4F65B6C897AB /* Rubik-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Italic-VariableFont_wght.ttf"; path = "../assets/fonts/Rubik-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5A3A290763982322728F2F /* libPods-birthday-birthdayTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D8E3774E3C699991014DB8 /* libPods-birthday.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,10 +102,23 @@
 			name = birthday;
 			sourceTree = "<group>";
 		};
+		157CE084FB8C482791428787 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F70101A5300A4F65B6C897AB /* Rubik-Italic-VariableFont_wght.ttf */,
+				B13B908993E24F2A98F1FAC2 /* Rubik-VariableFont_wght.ttf */,
+				85D14769B28F401BB2B7A4CD /* Fredoka-VariableFont_wdth,wght.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				5448FD2C2356A6CB85030B82 /* libPods-birthday.a */,
+				EB2E522D5177962FE754D5C1 /* libPods-birthday-birthdayTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,6 +139,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				157CE084FB8C482791428787 /* Resources */,
+				A4E57A11F4147E80A0B52BE8 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -131,16 +155,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		157CE084FB8C482791428787 /* Resources */ = {
-			isa = "PBXGroup";
+		A4E57A11F4147E80A0B52BE8 /* Pods */ = {
+			isa = PBXGroup;
 			children = (
-				F70101A5300A4F65B6C897AB /* Rubik-Italic-VariableFont_wght.ttf */,
-				B13B908993E24F2A98F1FAC2 /* Rubik-VariableFont_wght.ttf */,
-				85D14769B28F401BB2B7A4CD /* Fredoka-VariableFont_wdth,wght.ttf */,
+				11D0A9ECDCECD7500434DE82 /* Pods-birthday.debug.xcconfig */,
+				DE6A4ED40608B5D9FE051288 /* Pods-birthday.release.xcconfig */,
+				98BA5052898EC3CF6ECCA3A9 /* Pods-birthday-birthdayTests.debug.xcconfig */,
+				D96F78A6EE31BDA3E4DDF1CC /* Pods-birthday-birthdayTests.release.xcconfig */,
 			);
-			name = Resources;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -149,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "birthdayTests" */;
 			buildPhases = (
+				46886FD4FBFBB2F3CF321056 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				C7E1F483AFBCEE8E33E27122 /* [CP] Embed Pods Frameworks */,
+				ED944D3E006857D06B651C60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,11 +195,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "birthday" */;
 			buildPhases = (
+				C5A8F135F00B85D3110B8C72 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				1EEC1D50EC0A888C5381C683 /* [CP] Embed Pods Frameworks */,
+				7AE514E83452C20BCCD7E664 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,6 +286,118 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
+		1EEC1D50EC0A888C5381C683 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday/Pods-birthday-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday/Pods-birthday-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-birthday/Pods-birthday-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46886FD4FBFBB2F3CF321056 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-birthday-birthdayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AE514E83452C20BCCD7E664 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday/Pods-birthday-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday/Pods-birthday-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-birthday/Pods-birthday-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5A8F135F00B85D3110B8C72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-birthday-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7E1F483AFBCEE8E33E27122 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED944D3E006857D06B651C60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-birthday-birthdayTests/Pods-birthday-birthdayTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +450,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98BA5052898EC3CF6ECCA3A9 /* Pods-birthday-birthdayTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -333,6 +477,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D96F78A6EE31BDA3E4DDF1CC /* Pods-birthday-birthdayTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -356,6 +501,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11D0A9ECDCECD7500434DE82 /* Pods-birthday.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -381,6 +527,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE6A4ED40608B5D9FE051288 /* Pods-birthday.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -435,6 +582,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -499,6 +647,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
